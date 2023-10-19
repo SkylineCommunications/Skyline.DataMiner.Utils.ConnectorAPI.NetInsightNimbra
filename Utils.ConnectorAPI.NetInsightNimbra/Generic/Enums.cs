@@ -22,6 +22,42 @@
     }
 
     /// <summary>
+    /// Represents the operation status in the Service Table of the node.
+    /// </summary>
+    public enum ServiceOperationStatusNode
+    {
+        /// <summary>
+        /// Represents a state where the service's status is not recognized or determined.
+        /// </summary>
+        Unknown = 0,
+
+        /// <summary>
+        /// Indicates that the service is operational and functioning properly.
+        /// </summary>
+        Up = 1,
+
+        /// <summary>
+        /// Indicates that the service is not operational due to some faults or issues.
+        /// </summary>
+        Down = 2,
+
+        /// <summary>
+        /// Indicates that the service is partially operational. Some components may be up while others might be down.
+        /// </summary>
+        Partial = 3,
+
+        /// <summary>
+        /// Indicates that the service is in a passive or inactive state, possibly awaiting activation or external triggers.
+        /// </summary>
+        Dormant = 5,
+
+        /// <summary>
+        /// Indicates that the service has been intentionally brought down for administrative reasons.
+        /// </summary>
+        AdminDown = 6,
+    }
+
+    /// <summary>
     /// Represents the status of the ETH Devices.
     /// </summary>
     public enum DeviceStatus
@@ -155,7 +191,6 @@
         DifferentialService = 2,
     }
 
-
     /// <summary>
     /// Represents the protection type of the DTM connection.
     /// </summary>
@@ -168,7 +203,7 @@
 
         /// <summary>
         /// Hitless protection mode
-        /// This refers to a system's ability to switch over to a backup or redundant path without causing any noticeable interruption or "hit" to the service. 
+        /// This refers to a system's ability to switch over to a backup or redundant path without causing any noticeable interruption or "hit" to the service.
         /// </summary>
         Hitless = 1,
 
@@ -221,14 +256,13 @@
     public enum ReestablishMethod
     {
         /// <summary>
-        /// Represents an exponential backoff method where the delay between 
+        /// Represents an exponential backoff method where the delay between
         /// reconnection attempts doubles with each subsequent attempt.
         /// This method helps avoid flooding the target with too many
         /// connection attempts in a short time span.
         /// </summary>
         Exponential = 1,
     }
-
 
     /// <summary>
     /// Defines the possible types of Source Routes.
@@ -357,7 +391,6 @@
         /// </summary>
         Provider = 3,
     }
-
 
     /// <summary>
     /// Represents the Administrative status of the DTM connection.
