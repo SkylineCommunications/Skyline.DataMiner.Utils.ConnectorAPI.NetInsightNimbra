@@ -21,24 +21,66 @@
         Untagged = 3,
     }
 
+    /// <summary>
+    /// Represents the status of the ETH Devices.
+    /// </summary>
     public enum DeviceStatus
     {
+        /// <summary>
+        /// The device is present and accounted for in the system.
+        /// </summary>
         Present = 1,
+
+        /// <summary>
+        /// The device is not present or not detected in the system.
+        /// </summary>
         Absent = 2,
+
+        /// <summary>
+        /// The device present does not match the expected device or configuration.
+        /// </summary>
         Mismatch = 3,
     }
 
+    /// <summary>
+    /// Represents the version of the DCP.
+    /// </summary>
     public enum DcpVersion
     {
+        /// <summary>
+        /// The system will automatically determine the DCP version.
+        /// </summary>
         Auto = 1,
+
+        /// <summary>
+        /// Refers to the second version of the DCP.
+        /// </summary>
         Dcp2 = 2,
+
+        /// <summary>
+        /// Refers to the third version of the DCP.
+        /// </summary>
         Dcp3 = 3,
     }
 
+    /// <summary>
+    /// Represents the mode of the connection between the original node and destination nodes.
+    /// </summary>
     public enum DestinationMode
     {
+        /// <summary>
+        /// The connection is made directly to a single recipient.
+        /// </summary>
         Unicast = 1,
+
+        /// <summary>
+        /// The connection is made to multiple recipients simultaneously.
+        /// </summary>
         Multicast = 2,
+
+        /// <summary>
+        /// The mode of the connection is not specified or determined.
+        /// </summary>
         Unspecified = 3,
     }
 
@@ -47,13 +89,30 @@
     /// </summary>
     public enum TruthValue
     {
+        /// <summary>
+        /// The value or statement is true.
+        /// </summary>
         True = 1,
+
+        /// <summary>
+        /// The value or statement is false.
+        /// </summary>
         False = 2,
     }
 
+    /// <summary>
+    /// Represents the expected channel status when adding the ETH group.
+    /// </summary>
     public enum ExpectChannelStatusOptions
     {
+        /// <summary>
+        /// The channel is expected to terminate upon adding to the ETH group.
+        /// </summary>
         ExpectedToTerminate = 1,
+
+        /// <summary>
+        /// The channel is not expected to terminate upon adding to the ETH group.
+        /// </summary>
         NotExceptedToTerminate = 2,
     }
 
@@ -96,6 +155,10 @@
         DifferentialService = 2,
     }
 
+
+    /// <summary>
+    /// Represents the protection type of the DTM connection.
+    /// </summary>
     public enum ProtectionType
     {
         /// <summary>
@@ -104,12 +167,14 @@
         None = 0,
 
         /// <summary>
-        /// Hitless.
+        /// Hitless protection mode
+        /// This refers to a system's ability to switch over to a backup or redundant path without causing any noticeable interruption or "hit" to the service. 
         /// </summary>
         Hitless = 1,
 
         /// <summary>
-        /// Standby.
+        /// Standby protection mode
+        /// This refers to a protection scheme where a backup or redundant path/component is kept in a "standby" mode, ready to take over operations if the primary path/component fails.
         /// </summary>
         Standby = 2,
     }
@@ -150,10 +215,20 @@
         HitlessProtected = 5,
     }
 
+    /// <summary>
+    /// Represents the method for re-establishing TTP connection.
+    /// </summary>
     public enum ReestablishMethod
     {
+        /// <summary>
+        /// Represents an exponential backoff method where the delay between 
+        /// reconnection attempts doubles with each subsequent attempt.
+        /// This method helps avoid flooding the target with too many
+        /// connection attempts in a short time span.
+        /// </summary>
         Exponential = 1,
     }
+
 
     /// <summary>
     /// Defines the possible types of Source Routes.
@@ -225,6 +300,9 @@
         Process = 4,
     }
 
+    /// <summary>
+    /// Represents the options for suppressing the alarm when adding the ITS Destination
+    /// </summary>
     public enum SuppressAlarm
     {
         NotSupported = 0,
@@ -280,9 +358,20 @@
         Provider = 3,
     }
 
+
+    /// <summary>
+    /// Represents the Administrative status of the DTM connection.
+    /// </summary>
     public enum AdminState
     {
+        /// <summary>
+        /// The DTM connection is operational and allowed to transmit data.
+        /// </summary>
         Up = 1,
+
+        /// <summary>
+        /// The DTM connection is administratively shut down and not allowed to transmit data.
+        /// </summary>
         Down = 2,
     }
 
@@ -291,98 +380,206 @@
     /// </summary>
     public enum RowStatus
     {
+        /// <summary>
+        /// The row is currently in use and operational.
+        /// </summary>
         Active = 1,
+
+        /// <summary>
+        /// The row is configured but not currently in service.
+        /// </summary>
         NotInService = 2,
+
+        /// <summary>
+        /// The row is known but not ready to be put into service.
+        /// </summary>
         NotReady = 3,
+
+        /// <summary>
+        /// The row should be created and immediately used.
+        /// </summary>
         CreateAndGo = 4,
+
+        /// <summary>
+        /// The row should be created but wait for further instruction to be used.
+        /// </summary>
         CreateAndWait = 5,
+
+        /// <summary>
+        /// The row should be removed from the table.
+        /// </summary>
         Destroy = 6,
     }
 
     /// <summary>
-    /// Represents the possible SNMP rowstatus uptions in DataMiner for table rows.
+    /// Represents the possible SNMP rowstatus options in DataMiner for table rows.
     /// </summary>
     public enum DataMinerSnmpRowStatus
     {
+        /// <summary>
+        /// The row has been updated with new values.
+        /// </summary>
         Updated = 1,
+
+        /// <summary>
+        /// The row's current values are equal to the previous state.
+        /// </summary>
         Equal = 2,
+
+        /// <summary>
+        /// A new row has been added to the table.
+        /// </summary>
         New = 3,
+
+        /// <summary>
+        /// The row has been deleted from the table.
+        /// </summary>
         Deleted = 4,
+
+        /// <summary>
+        /// The row has been recreated after being deleted.
+        /// </summary>
         Recreated = 5,
     }
 
     /// <summary>
     /// Represents the operation status in Service Table of the Manager.
     /// </summary>
-    ///
     public enum ServiceOperationStatusManager
     {
+        /// <summary>
+        /// The status of the service is not determined.
+        /// </summary>
         Unknown = 0,
-        Up = 1,
-        Down = 2,
-        Partial = 3,
-        Dormant = 4,
-        AdminDown = 5,
-    }
 
-    /// <summary>
-    /// Represents the operation status in Service Table of the node.
-    /// </summary>
-    ///
-    public enum ServiceOperationStatusNode
-    {
-        Unknown = 0,
+        /// <summary>
+        /// The service is operational and running without any issues.
+        /// </summary>
         Up = 1,
+
+        /// <summary>
+        /// The service has encountered an issue and is not operational.
+        /// </summary>
         Down = 2,
+
+        /// <summary>
+        /// The service is partially operational with some components or functionalities not working as expected.
+        /// </summary>
         Partial = 3,
-        Dormant = 5,
-        AdminDown = 6,
+
+        /// <summary>
+        /// The service is in a standby or backup state but not active.
+        /// </summary>
+        Dormant = 4,
+
+        /// <summary>
+        /// The service has been manually brought down by an administrator.
+        /// </summary>
+        AdminDown = 5,
     }
 
     /// <summary>
     /// Represents the operation status in the destination Table.
     /// </summary>
-    ///
     public enum DstOperationStatus
     {
+        /// <summary>
+        /// The status of the operation is not determined.
+        /// </summary>
         Unknown = 0,
+
+        /// <summary>
+        /// The operation is running without any issues.
+        /// </summary>
         Up = 1,
+
+        /// <summary>
+        /// The operation has encountered a problem and is not running.
+        /// </summary>
         Down = 2,
+
+        /// <summary>
+        /// The operation has been manually brought down by an administrator.
+        /// </summary>
         AdminDown = 3,
     }
 
     /// <summary>
     /// Represents the operation status in the Channel Table.
     /// </summary>
-    ///
     public enum ChannelOperationStatus
     {
+        /// <summary>
+        /// The channel is operational and running without any issues.
+        /// </summary>
         Up = 1,
+
+        /// <summary>
+        /// The channel has encountered a problem and is not operational.
+        /// </summary>
         Down = 2,
+
+        /// <summary>
+        /// The channel has been manually brought down by an administrator.
+        /// </summary>
         AdminDown = 3,
     }
 
     /// <summary>
     /// Represents the hidden operation status in Channel Table.
     /// </summary>
-    ///
     public enum ChannelOperationStatusHidden
     {
+        /// <summary>
+        /// The hidden channel is operational and running without any issues.
+        /// </summary>
         Up = 1,
+
+        /// <summary>
+        /// The hidden channel has encountered a problem and is not operational.
+        /// </summary>
         Down = 2,
     }
 
+    /// <summary>
+    /// Represents the types of the DTM link.
+    /// </summary>
     public enum DtmLinkTypes
     {
+        /// <summary>
+        /// The DTM link is local to the device or system.
+        /// </summary>
         Local = 0,
+
+        /// <summary>
+        /// The DTM link is set to receive data.
+        /// </summary>
         Rx = 1,
+
+        /// <summary>
+        /// The DTM link is set to transmit data.
+        /// </summary>
         Tx = 2,
     }
 
+    /// <summary>
+    /// Represents the type of the Nimbra service.
+    /// </summary>
     public enum ServiceTypes
     {
+        /// <summary>
+        /// The service type does not match any of the known types.
+        /// </summary>
         Other = 0,
+
+        /// <summary>
+        /// Integrated Transport Service type for Nimbra.
+        /// </summary>
         ITS = 1,
+
+        /// <summary>
+        /// Ethernet Transport Service type for Nimbra.
+        /// </summary>
         ETS = 2,
     }
 }

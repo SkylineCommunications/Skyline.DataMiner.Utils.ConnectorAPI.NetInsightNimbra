@@ -1,9 +1,9 @@
 ﻿namespace Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra
 {
+    using Skyline.DataMiner.Core.DataMinerSystem.Common;
     using Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra.Node;
     using Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra.Requests;
     using Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra.Results;
-    using Skyline.DataMiner.Core.DataMinerSystem.Common;
     using System;
     using System.Collections.Generic;
     using System.Linq;
