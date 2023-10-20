@@ -339,9 +339,24 @@
     /// </summary>
     public enum SuppressAlarm
     {
+        /// <summary>
+        /// Indicates that alarm suppression is not supported for the ITS Destination.
+        /// </summary>
         NotSupported = 0,
+
+        /// <summary>
+        /// No alarms will be suppressed. All alarms will be reported as they occur.
+        /// </summary>
         None = 1,
+
+        /// <summary>
+        /// Only warning alarms will be suppressed. Critical alarms will still be reported.
+        /// </summary>
         Warning = 2,
+
+        /// <summary>
+        /// All types of alarms, whether critical or warning, will be suppressed.
+        /// </summary>
         All = 3,
     }
 

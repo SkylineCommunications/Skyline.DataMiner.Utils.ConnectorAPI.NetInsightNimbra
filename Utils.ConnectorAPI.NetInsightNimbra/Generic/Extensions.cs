@@ -6,6 +6,10 @@
     using System;
     using System.Collections.Generic;
 
+
+    /// <summary>
+    /// Extension methods for the Nimbra request and results
+    /// </summary>
     public static class Extensions
     {
         private static readonly Dictionary<RequestType, Type> RequestTypes = new Dictionary<RequestType, Type>
@@ -52,6 +56,14 @@
             { RequestType.SetForwardingFunction, typeof(SetForwardingFunctionResult) },
         };
 
+
+        /// <summary>
+        /// De-serialized the target string value to the Nimbra request.
+        /// </summary>
+        /// <param name="stringValue">Represents the string value that need to be de-serialized.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">If the string value is null, this exception will be triggered.</exception>
+        /// <exception cref="ArgumentException">If the current type of the request is unknown, or the request type is not supported.</exception>
         public static IRequest DeserializeRequest(this string stringValue)
         {
             BaseRequest request = JsonConvert.DeserializeObject<BaseRequest>(stringValue);
@@ -96,14 +108,25 @@
             return (IResult)JsonConvert.DeserializeObject(stringValue, ResultTypes[result.RequestType]);
         }
 
+        /// <summary>
+        /// Serialize nimbra request object.
+        /// </summary>
+        /// <param name="request">Represents request to the Nimbra connector and Nimbra Manager connector </param>
+        /// <returns></returns>
         public static string Serialize(this IRequest request)
         {
             return JsonConvert.SerializeObject(request);
         }
 
-        public static string Serialize(this IResult request)
+
+        /// <summary>
+        /// Serialize nimbra result object.
+        /// </summary>
+        /// <param name="result">Represents result of the Nimbra connector and Nimbra Manager connector </param>
+        /// <returns></returns>
+        public static string Serialize(this IResult result)
         {
-            return JsonConvert.SerializeObject(request);
+            return JsonConvert.SerializeObject(result);
         }
     }
 }
