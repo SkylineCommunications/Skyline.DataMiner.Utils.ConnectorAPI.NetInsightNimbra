@@ -42,49 +42,64 @@
         {
             get
             {
-                if (!node.ServiceDestinations.ContainsKey(ServiceKey))
-                {
-                    return new IServiceDestination[0];
-                }
-
-                return node.ServiceDestinations[ServiceKey];
+                return TryGetDestinations();
             }
+        }
+
+        private IEnumerable<IServiceDestination> TryGetDestinations()
+        {
+            if (!node.ServiceDestinations.ContainsKey(ServiceKey))
+            {
+                return new IServiceDestination[0];
+            }
+
+            return node.ServiceDestinations[ServiceKey];
         }
 
         public ISrcItsTtp SrcItsTtp
         {
             get
             {
-                if (ServiceType != ServiceTypes.ITS)
-                {
-                    throw new MissingTtpException($"This service is not a ITS service");
-                }
-
-                if (!node.SrcItsTtps.ContainsKey(SrcDsti))
-                {
-                    throw new MissingTtpException($"Unable to find ITS Source TTP with DSTI {SrcDsti}");
-                }
-
-                return node.SrcItsTtps[SrcDsti];
+                return TryGetSrtItsTtp();
             }
+        }
+
+        private ISrcItsTtp TryGetSrtItsTtp()
+        {
+            if (ServiceType != ServiceTypes.ITS)
+            {
+                throw new MissingTtpException($"This service is not a ITS service");
+            }
+
+            if (!node.SrcItsTtps.ContainsKey(SrcDsti))
+            {
+                throw new MissingTtpException($"Unable to find ITS Source TTP with DSTI {SrcDsti}");
+            }
+
+            return node.SrcItsTtps[SrcDsti];
         }
 
         public IEtsTtp SrcEtsTtp
         {
             get
             {
-                if (ServiceType != ServiceTypes.ETS)
-                {
-                    throw new MissingTtpException($"This service is not a ETS service");
-                }
-
-                if (!node.EtsTtps.ContainsKey(SrcDsti))
-                {
-                    throw new MissingTtpException($"Unable to find ETS TTP with DSTI {SrcDsti}");
-                }
-
-                return node.EtsTtps[SrcDsti];
+                return TryGetEtsTtp();
             }
+        }
+
+        private IEtsTtp TryGetEtsTtp()
+        {
+            if (ServiceType != ServiceTypes.ETS)
+            {
+                throw new MissingTtpException($"This service is not a ETS service");
+            }
+
+            if (!node.EtsTtps.ContainsKey(SrcDsti))
+            {
+                throw new MissingTtpException($"Unable to find ETS TTP with DSTI {SrcDsti}");
+            }
+
+            return node.EtsTtps[SrcDsti];
         }
     }
 }
