@@ -10,7 +10,6 @@
     internal class NimbraManager : INimbraManager
     {
         internal const string ProtocolName = "NetInsight Nimbra Application Manager";
-        private bool caching;
         private IEnumerable<ManagerService> _services;
         private IEnumerable<Customer> _customers;
         private IReadOnlyDictionary<DmsElementId, IManagerNode> _nodes;
@@ -18,21 +17,11 @@
 
         public NimbraManager(IDmsElement element, bool caching = true)
         {
-            this.caching = caching;
+            this.Caching = caching;
             this.Element = element;
         }
 
-        public bool Caching
-        {
-            get
-            {
-                return caching;
-            }
-            set
-            {
-                caching = value;
-            }
-        }
+        public bool Caching { get; set; }
 
         public IDmsElement Element { get; private set; }
 
@@ -40,7 +29,7 @@
         {
             get
             {
-                if (!caching)
+                if (!Caching)
                 {
                     return GetServices();
                 }
@@ -58,7 +47,7 @@
         {
             get
             {
-                if (!caching)
+                if (!Caching)
                 {
                     return GetCustomers();
                 }
@@ -76,7 +65,7 @@
         {
             get
             {
-                if (_nodes == null || !caching)
+                if (_nodes == null || !Caching)
                 {
                     GetNodes();
                 }
@@ -89,7 +78,7 @@
         {
             get
             {
-                if (_nodes == null || !caching)
+                if (_nodes == null || !Caching)
                 {
                     GetNodes();
                 }

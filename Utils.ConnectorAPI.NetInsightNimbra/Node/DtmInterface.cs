@@ -9,7 +9,7 @@
         {
             if (dtmIfRow.Length < 60)
             {
-                throw new ArgumentException($"ERROR|DTM Interface row does not contain 60 columns: '" + string.Join("', '", dtmIfRow) + "'", "channelrow");
+                throw new ArgumentException($"ERROR|DTM Interface row does not contain 60 columns: '" + string.Join("', '", dtmIfRow) + "'", "dtmIfRow");
             }
 
             Key = Convert.ToString(dtmIfRow[0]);

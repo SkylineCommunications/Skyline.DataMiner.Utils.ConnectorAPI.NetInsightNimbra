@@ -37,7 +37,7 @@
             element = thisDms.GetElement(elementName);
             if (element.Protocol.Name != NimbraManager.ProtocolName)
             {
-                throw new ArgumentException($"The element is not running protocol {NimbraManager.ProtocolName}", "element");
+                throw new ArgumentException($"The element is not running protocol {NimbraManager.ProtocolName}", "elementName");
             }
 
             return new NimbraManager(element);
@@ -85,7 +85,7 @@
             element = thisDms.GetElement(elementName);
             if (element.Protocol.Name != NimbraNode.ProtocolName)
             {
-                throw new ArgumentException($"The element is not running protocol {NimbraNode.ProtocolName}", "element");
+                throw new ArgumentException($"The element is not running protocol {NimbraNode.ProtocolName}", "elementName");
             }
 
             return new NimbraNode(element);
@@ -103,7 +103,7 @@
             element = thisDms.GetElement(elementId);
             if (element.Protocol.Name != NimbraNode.ProtocolName)
             {
-                throw new ArgumentException($"The element is not running protocol {NimbraNode.ProtocolName}", "element");
+                throw new ArgumentException($"The element is not running protocol {NimbraNode.ProtocolName}", "elementId");
             }
 
             return new NimbraNode(element);

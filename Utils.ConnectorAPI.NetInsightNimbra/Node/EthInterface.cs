@@ -8,7 +8,7 @@
         {
             if (interfRow.Length < 71)
             {
-                throw new ArgumentException($"ERROR|Interface ETH row does not contain 71 columns: '" + string.Join("', '", interfRow) + "'", "serviceRow");
+                throw new ArgumentException($"ERROR|Interface ETH row does not contain 71 columns: '" + string.Join("', '", interfRow) + "'", "interfRow");
             }
 
             Name = Convert.ToString(interfRow[18]);

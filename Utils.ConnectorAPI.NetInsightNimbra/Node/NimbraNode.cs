@@ -12,7 +12,7 @@
     internal class NimbraNode : INimbraNode
     {
         internal const string ProtocolName = "NetInsight Nimbra";
-        private bool caching;
+        private readonly bool caching;
         private IEnumerable<Channel> _channels;
         private IEnumerable<DtmInterface> _dtmInterfaces;
         private IEnumerable<DtmLink> _dtmLinks;
