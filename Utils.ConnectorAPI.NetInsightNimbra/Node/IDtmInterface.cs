@@ -1,5 +1,8 @@
 ﻿namespace Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra
 {
+    /// <summary>
+    /// Nimbra Node DTM interface table properties.
+    /// </summary>
     public interface IDtmInterface
     {
         /// <summary>

@@ -39,6 +39,7 @@
         /// Get the node that has a specific DTM address.
         /// </summary>
         /// <param name="dtmAddress">The DTM address.</param>
+        ///  <param name="node">Node that get by using the DTM address.</param>
         /// <returns>The node with the specific DTM address.</returns>
         bool TryGetNodeForDtm(string dtmAddress, out IManagerNode node);
 

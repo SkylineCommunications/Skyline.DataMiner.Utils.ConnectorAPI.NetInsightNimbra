@@ -86,6 +86,13 @@
             return (IRequest)JsonConvert.DeserializeObject(stringValue, RequestTypes[request.RequestType]);
         }
 
+        /// <summary>
+        /// De-serialized the target string value to the Nimbra result.
+        /// </summary>
+        /// <param name="stringValue">Represents the string value that need to be de-serialized.</param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException">If the string value is null, this exception will be triggered.</exception>
+        /// <exception cref="ArgumentException">If the current type of the request is unknown, or the request type is not supported.</exception>
         public static IResult DeserializeResult(this string stringValue)
         {
             BaseResult result = JsonConvert.DeserializeObject<BaseResult>(stringValue);

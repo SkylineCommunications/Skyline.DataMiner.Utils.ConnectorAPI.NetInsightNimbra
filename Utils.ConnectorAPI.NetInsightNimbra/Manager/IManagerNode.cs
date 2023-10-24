@@ -2,6 +2,9 @@
 {
     using Skyline.DataMiner.Core.DataMinerSystem.Common;
 
+    /// <summary>
+    /// NetInsight Manager Node properties.
+    /// </summary>
     public interface IManagerNode
     {
         /// <summary>

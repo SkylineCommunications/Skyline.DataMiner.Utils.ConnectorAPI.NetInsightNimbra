@@ -4,6 +4,9 @@
     using Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra.Manager;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Nimbra Manager services table properties.
+    /// </summary>
     public interface IManagerService
     {
         /// <summary>

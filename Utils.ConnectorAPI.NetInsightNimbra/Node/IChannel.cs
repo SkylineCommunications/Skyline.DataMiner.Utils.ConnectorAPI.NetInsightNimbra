@@ -1,5 +1,8 @@
 ﻿namespace Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra
 {
+    /// <summary>
+    /// Nimbra Node Channel table properties.
+    /// </summary>
     public interface IChannel
     {
         /// <summary>
