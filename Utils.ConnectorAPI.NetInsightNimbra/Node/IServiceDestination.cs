@@ -1,5 +1,8 @@
 ﻿namespace Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra
 {
+    /// <summary>
+    /// Represent the destination node of the NetInsight Nimbra service.
+    /// </summary>
     public interface IServiceDestination
     {
         /// <summary>

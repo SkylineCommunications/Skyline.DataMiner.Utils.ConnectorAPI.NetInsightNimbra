@@ -6,6 +6,9 @@
     using Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra.Results;
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Represent NetInsight Nimbra Node.
+    /// </summary>
     public interface INimbraNode
     {
         /// <summary>

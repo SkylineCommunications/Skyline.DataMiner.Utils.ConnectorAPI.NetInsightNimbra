@@ -2,6 +2,9 @@
 {
     using System.Collections.Generic;
 
+    /// <summary>
+    /// Represent the service in the NetInsight Nimbra Node.
+    /// </summary>
     public interface INodeService
     {
         /// <summary>

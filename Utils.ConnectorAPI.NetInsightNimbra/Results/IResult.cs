@@ -3,6 +3,9 @@
     using Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra.Requests;
     using System;
 
+    /// <summary>
+    /// Represent the result for the request to the Nimbra Node and Manager.
+    /// </summary>
     public interface IResult
     {
         /// <summary>

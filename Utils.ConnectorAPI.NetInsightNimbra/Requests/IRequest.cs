@@ -3,6 +3,9 @@
     using Skyline.DataMiner.Core.DataMinerSystem.Common;
     using System;
 
+    /// <summary>
+    /// Represents the request for NetInsight Nimbra and NetInsight Nimbra Manager.
+    /// </summary>
     public interface IRequest
     {
         /// <summary>

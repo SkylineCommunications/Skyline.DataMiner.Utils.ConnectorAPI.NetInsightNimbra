@@ -1,5 +1,8 @@
 ﻿namespace Skyline.DataMiner.Utils.ConnectorAPI.NetInsightNimbra
 {
+    /// <summary>
+    /// Represent the channel of the service for NetInsight Nimbra Node.
+    /// </summary>
     public interface IServiceChannel
     {
         /// <summary>
