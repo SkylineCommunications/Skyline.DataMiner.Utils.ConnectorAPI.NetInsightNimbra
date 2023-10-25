@@ -631,9 +631,19 @@
         ETS = 2,
     }
 
+    /// <summary>
+    /// Specifies the method used for removal.
+    /// </summary>
     public enum RemoveOptions
     {
+        /// <summary>
+        /// Indicates a normal removal method.
+        /// </summary>
         Soft,
+
+        /// <summary>
+        /// Indicates a forced removal method.
+        /// </summary>
         Hard,
     }
 }
