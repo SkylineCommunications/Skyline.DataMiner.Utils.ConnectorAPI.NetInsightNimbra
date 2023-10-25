@@ -2,6 +2,9 @@
 {
     using Newtonsoft.Json;
 
+    /// <summary>
+    /// Represents the type of the NetInsight Nimbra request.
+    /// </summary>
     [JsonConverter(typeof(TolerantEnumConverter))]
     public enum RequestType
     {

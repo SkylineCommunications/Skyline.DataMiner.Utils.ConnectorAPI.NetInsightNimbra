@@ -630,4 +630,10 @@
         /// </summary>
         ETS = 2,
     }
+
+    public enum RemoveOptions
+    {
+        Soft,
+        Hard,
+    }
 }

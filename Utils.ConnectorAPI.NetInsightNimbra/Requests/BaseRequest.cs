@@ -4,8 +4,14 @@
     using Skyline.DataMiner.Core.DataMinerSystem.Common;
     using System;
 
+    /// <summary>
+    /// Represent basic request of the NetInsight Nimbra requests
+    /// </summary>
     public class BaseRequest : IRequest
     {
+        /// <summary>
+        /// Initialize the new instance of the base request.
+        /// </summary>
         protected BaseRequest()
         {
             Id = Guid.NewGuid();
@@ -23,9 +29,15 @@
         [JsonProperty("Request Type")]
         public RequestType RequestType { get; protected set; }
 
+        /// <summary>
+        /// Represents the DMS element ID of the NetInsight Nimbra node element.
+        /// </summary>
         [JsonIgnore]
         public DmsElementId? Node { get; set; }
 
+        /// <summary>
+        /// Represents the DMS element ID of the NetInsight Nimbra manager element.
+        /// </summary>
         [JsonIgnore]
         public DmsElementId? Manager { get; set; }
 
