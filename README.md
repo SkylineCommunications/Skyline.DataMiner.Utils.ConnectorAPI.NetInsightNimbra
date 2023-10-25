@@ -2,7 +2,7 @@
 
 ## About
 
-This Nuget package helps to handle the different requests to the NetInsight Nimbra node connector and NetInsight Nimbra Application Manager connector.
+This solution helps to handle the different requests to the NetInsight Nimbra node connector and NetInsight Nimbra Application Manager connector.
 
 ## Projects
 
