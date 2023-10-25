@@ -2,7 +2,7 @@
 
 ## About
 
-Nuget package that helps to execute actions for the NetInsight Nimbra connector
+This solution helps to handle the different requests to the NetInsight Nimbra node connector and NetInsight Nimbra Application Manager connector.
 
 ### About DataMiner
 
